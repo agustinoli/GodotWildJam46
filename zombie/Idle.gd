@@ -4,9 +4,9 @@ extends State
 func enter(_msg := {}) -> void:
 	pass
 
-func update(delta: float) -> void:
+func update(_delta: float) -> void:
 	pass
 
-func _on_AttackArea_area_entered(area):
+func _on_AttackArea_area_entered(_area):
 	state_machine.transition_to('Attack')
 	print_debug('ZOMBIE: Paso a attack')

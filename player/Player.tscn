@@ -25,3 +25,6 @@ texture = ExtResource( 1 )
 [node name="Orb" parent="." instance=ExtResource( 3 )]
 position = Vector2( -37.3334, 0 )
 scale = Vector2( 0.26, 0.26 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
