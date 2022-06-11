@@ -7,7 +7,7 @@ func enter(_msg := {}) -> void:
 func update(_delta: float) -> void:
 	pass
 
-func _on_AttackArea_area_entered(_area):
+func _on_AttackArea_area_entered(area):
 	if area.get_name() == 'Orb':
 		state_machine.transition_to('Attack')
 		print_debug('ZOMBIE: Paso a attack')
