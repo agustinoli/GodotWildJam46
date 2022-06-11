@@ -7,4 +7,4 @@ func physics_update(delta: float) -> void:
 func _on_AttackArea_area_exited(area):
 	if area.get_name() == 'Orb':
 		state_machine.transition_to('Idle')
-		print_debug('ZOMBIE: Paso a idle')
+		print_debug('ENEMY: Paso a idle')

@@ -1,4 +1,4 @@
-class_name Zombie
+class_name Enemy
 extends KinematicBody2D
 
 var NORMAL_SPEED = 100
@@ -35,9 +35,9 @@ func move_towards_player( delta ):
 		velocity.x = 0
 	
 	if position.y < player_pos.y:
-		velocity.y = 1
+		velocity.y = 1.0 / 2
 	elif position.y > player_pos.y:
-		velocity.y = -1
+		velocity.y = -1.0 / 2
 	else:
 		velocity.y = 0
 	

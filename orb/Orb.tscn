@@ -18,7 +18,4 @@ texture = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="AtackTimer" type="Timer" parent="."]
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="AtackTimer" to="." method="_on_AtackTimer_timeout"]
