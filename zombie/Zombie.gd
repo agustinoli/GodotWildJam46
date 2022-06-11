@@ -1,17 +1,51 @@
 class_name Zombie
 extends KinematicBody2D
 
+var NORMAL_SPEED = 100
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var current_state
+var speed
+var velocity
+var player_pos
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	speed = NORMAL_SPEED
+	velocity = Vector2.ZERO
 
+func _process(delta):
+	
+	current_state = $StateMachine.state.get_name()
+	
+	match current_state:
+		'Idle':
+			pass
+			
+		'Attack':
+			move_towards_player( delta )
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_player_position( new_player_pos ):
+	player_pos = new_player_pos
+
+func move_towards_player( delta ):
+	if position.x < player_pos.x:
+		velocity.x = 1
+	elif position.x > player_pos.x:
+		velocity.x = -1
+	else:
+		velocity.x = 0
+	
+	if position.y < player_pos.y:
+		velocity.y = 1
+	elif position.y > player_pos.y:
+		velocity.y = -1
+	else:
+		velocity.y = 0
+	
+	if velocity.x == 1:
+		scale.x = scale.y * -1
+	elif velocity.x == -1:
+		scale.x = scale.y
+	
+	velocity = velocity.normalized() * speed
+	
+	move_and_collide( velocity * delta )

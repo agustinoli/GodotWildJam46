@@ -9,4 +9,4 @@ func update(delta: float) -> void:
 
 func _on_AttackArea_area_entered(area):
 	state_machine.transition_to('Attack')
-	print_debug('Paso a attack')
+	print_debug('ZOMBIE: Paso a attack')

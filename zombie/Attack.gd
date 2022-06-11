@@ -7,4 +7,4 @@ func physics_update(delta: float) -> void:
 
 func _on_AttackArea_area_exited(area):
 	state_machine.transition_to('Idle')
-	print_debug('Paso a idle')
+	print_debug('ZOMBIE: Paso a idle')

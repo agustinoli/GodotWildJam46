@@ -10,8 +10,13 @@ func _ready():
 	velocity = Vector2.ZERO
 
 func _physics_process( delta ):
+	var collisioned_body
+	
 	parse_input()
-	move_and_collide( delta * velocity )
+	collisioned_body = move_and_collide( delta * velocity )
+	
+	if collisioned_body != null:
+		print_debug( str( 'PLAYER: Colision con ', collisioned_body.collider.get_name() ) )
 
 func parse_input():
 	velocity = Vector2.ZERO
@@ -34,7 +39,7 @@ func parse_input():
 	elif velocity.x == -1:
 		scale.x = scale.y
 	
-	velocity = velocity.normalized() * 400
+	velocity = velocity.normalized() * speed
 
 func use_orb():
 	$Orb.use()
