@@ -20,28 +20,26 @@ func _physics_process( delta ):
 	collisioned_body = move_and_collide( delta * velocity )
 	
 	if collisioned_body != null:
-		print_debug( str( 'PLAYER: Colision con ', collisioned_body.collider.get_name() ) )
+		if collisioned_body.collider.get_name() == 'Enemy':
+			print_debug( 'PLAYER: Player hited' )
+			queue_free()
+		
 
 func parse_input():
 	velocity = Vector2.ZERO
 	
-	if Input.is_action_pressed( "move_up" ):
-		velocity.y = -1
-	elif Input.is_action_pressed( "move_down" ):
-		velocity.y = 1
-	
-	if Input.is_action_pressed( "move_right" ):
-		velocity.x = 1
-	elif Input.is_action_pressed( "move_left" ):
-		velocity.x = -1
+	velocity.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	velocity.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	velocity.y /= 2
+	velocity = velocity.normalized() * speed
 	
 	if Input.is_action_pressed( "use_orb" ):
 		use_orb()
 	
-	if velocity.x == 1:
+	if velocity.x > 0:
 		scale.x = scale.y * -1
 		direction = 1
-	elif velocity.x == -1:
+	elif velocity.x < 0:
 		scale.x = scale.y
 		direction = -1
 	
