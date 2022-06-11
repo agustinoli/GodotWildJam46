@@ -1,13 +1,17 @@
 extends KinematicBody2D
 
+signal discharge
+
 var NORMAL_SPEED = 400
 
 var speed
 var velocity
+var direction
 
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
+	direction = 1
 
 func _physics_process( delta ):
 	var collisioned_body
@@ -36,10 +40,16 @@ func parse_input():
 	
 	if velocity.x == 1:
 		scale.x = scale.y * -1
+		direction = 1
 	elif velocity.x == -1:
 		scale.x = scale.y
+		direction = -1
 	
 	velocity = velocity.normalized() * speed
 
 func use_orb():
-	$Orb.use()
+	if $Orb.use():
+		emit_signal( 'discharge' )
+
+func get_direction():
+	return direction

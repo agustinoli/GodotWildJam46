@@ -225,3 +225,5 @@ tile_data = PoolIntArray( -1376261, 0, 131074, -1376260, 0, 196610, -1376259, 0,
 
 [node name="Zombie" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1025, 344 )
+[connection signal="discharge" from="Player" to="." method="_on_Player_discharge"]
+
