@@ -9,7 +9,7 @@ var speed
 var velocity
 
 func _ready():
-	$TimeToLive.wait_time = 1
+	$TimeToLive.wait_time = 3
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
 

@@ -17,7 +17,7 @@ func _ready():
 	$Sprite.texture = load( str( "res://orb/orb_", power_level, ".png") )
 	$Timer.wait_time = 0.1
 
-func _process( delta ):
+func _process( _delta ):
 	# Vibracion del orbe en funcion del power_level
 	# No me convence demasiado (randomizando quizas mejora?)
 	position.x = initial_position.x + vibration_direction * power_level

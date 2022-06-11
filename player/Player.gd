@@ -11,7 +11,7 @@ var direction
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
-	direction = 1
+	direction = -1
 
 func _physics_process( delta ):
 	var collisioned_body

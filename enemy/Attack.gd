@@ -1,7 +1,7 @@
 extends State
 
 
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	pass
 
 func _on_AttackArea_area_exited(area):
