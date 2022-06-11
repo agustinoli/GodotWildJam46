@@ -11,3 +11,5 @@ script = ExtResource( 3 )
 
 [node name="Zombie" parent="." instance=ExtResource( 2 )]
 position = Vector2( 727, 314 )
+
+[connection signal="discharge" from="Player" to="." method="_on_Player_discharge"]
