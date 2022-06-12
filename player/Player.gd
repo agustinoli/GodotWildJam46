@@ -3,7 +3,7 @@ extends KinematicBody2D
 signal discharge
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
-var current_direction: String setget set_current_dir, get_current_dir
+var current_direction: String = "Down" setget set_current_dir, get_current_dir
 var facing = Vector2() setget set_facing, get_facing
 
 var has_blue_orb

@@ -7,11 +7,6 @@ onready var animationSprite = self.get_node('../../AnimatedSprite')
 
 var NORMAL_SPEED = 3
 
-var speed
-var velocity
-var direction
-
-
 func _ready():
 	pass
 
@@ -28,7 +23,7 @@ func update(_delta: float) -> void:
 
 
 # Virtual function. Corresponds to the `_physics_process()` callback.
-func physics_update(delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	var move_direction = Vector2()
 
 	var LEFT = Input.is_action_pressed("move_left")
@@ -61,18 +56,13 @@ func direction2str(direction):
 # Virtual function. Called by the state machine upon changing the active state. The `msg` parameter
 # is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	speed = NORMAL_SPEED
-	velocity = Vector2.ZERO
-	direction = 1
-
+	pass
 
 # Virtual function. Called by the state machine before changing the active state. Use this function
 # to clean up the state.
 func exit() -> void:
 	pass
 
-func get_direction():
-	return direction
 
 
 
