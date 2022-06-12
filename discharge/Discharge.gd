@@ -1,7 +1,5 @@
 extends Area2D
 
-signal enemy_hited
-
 var NORMAL_SPEED = 500
 
 var direction
@@ -48,5 +46,5 @@ func _on_TimeToLive_timeout():
 
 func _on_Discharge_body_entered(body):
 	if body.get_name() == 'Enemy':
-		emit_signal( 'enemy_hited' )
+		body.receive_hit()
 		queue_free()

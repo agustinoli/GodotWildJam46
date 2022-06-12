@@ -13,9 +13,4 @@ func _on_Player_discharge():
 	var discharge_node = discharge_scene.instance()
 	add_child( discharge_node )
 	discharge_node.init( $Player.get_position(), $Player.get_current_dir() )
-	discharge_node.connect( "enemy_hited", self, "enemy_hited" )
-
-func enemy_hited():
-	print_debug( 'MAIN: Enemy golpeado' )
-	$Enemy.queue_free()
 
