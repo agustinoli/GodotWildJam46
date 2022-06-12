@@ -6,6 +6,8 @@ var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "U
 var current_direction: String = "Down" setget set_current_dir, get_current_dir
 var facing = Vector2() setget set_facing, get_facing
 
+var orb_selected
+
 var has_blue_orb
 var has_green_orb
 var has_red_orb
@@ -33,18 +35,22 @@ func _ready():
 	has_blue_orb = false
 	has_green_orb = false
 	has_red_orb = false
+	orb_selected = ''
 	$SprintTimer.wait_time = 1
 
 func _process(_delta):
 	parse_input()
+	$Flame.set_direction(current_direction)
 
 func parse_input():
-	if has_blue_orb and Input.is_action_just_pressed( "use_blue_orb" ):
-		emit_signal("discharge")
-	if has_green_orb and Input.is_action_just_pressed( "use_green_orb" ):
-		pass
-	if has_red_orb and Input.is_action_just_pressed( "use_red_orb" ):
-		pass
+	if has_blue_orb and Input.is_action_just_pressed( "choose_blue_orb" ):
+		orb_selected = 'BlueOrb'
+	if has_green_orb and Input.is_action_just_pressed( "choose_green_orb" ):
+		orb_selected = 'GreenOrb'
+	if has_red_orb and Input.is_action_just_pressed( "choose_red_orb" ):
+		orb_selected = 'RedOrb'
+	if Input.is_action_just_pressed("use_orb"):
+		use_orb()
 
 func orb_picked( orb_type ):
 	match orb_type:
@@ -54,3 +60,12 @@ func orb_picked( orb_type ):
 			has_red_orb = true
 		'GreenOrb':
 			has_green_orb = true
+
+func use_orb():
+	match orb_selected:
+		'BlueOrb':
+			emit_signal("discharge")
+		'GreenOrb':
+			pass
+		'RedOrb':
+			$Flame.cast()

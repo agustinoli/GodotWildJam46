@@ -243,9 +243,9 @@ position = Vector2( 845, 148 )
 position = Vector2( -229, 418 )
 
 [node name="GreenOrb" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1023, -9 )
+position = Vector2( 121, 364 )
 
 [node name="RedOrb" parent="." instance=ExtResource( 7 )]
-position = Vector2( 503, -268 )
+position = Vector2( -332, 259 )
 
 [connection signal="discharge" from="Player" to="." method="_on_Player_discharge"]

@@ -45,3 +45,7 @@ func move_towards_player( delta, player_pos ):
 	velocity = velocity.normalized() * speed
 	
 	move_and_collide( velocity * delta )
+
+# TODO: pasar como argumento la cantidad de daño recibido y restarle HP a self
+func receive_hit():
+	queue_free()
