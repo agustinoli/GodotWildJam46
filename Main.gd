@@ -18,3 +18,4 @@ func _on_Player_discharge():
 func enemy_hited():
 	print_debug( 'MAIN: Enemy golpeado' )
 	$Enemy.queue_free()
+
