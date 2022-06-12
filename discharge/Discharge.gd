@@ -1,6 +1,6 @@
 extends Area2D
 
-signal zombie_hited
+signal enemy_hited
 
 var NORMAL_SPEED = 500
 
@@ -9,7 +9,7 @@ var speed
 var velocity
 
 func _ready():
-	$TimeToLive.wait_time = 1
+	$TimeToLive.wait_time = 3
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
 
@@ -27,6 +27,6 @@ func _on_TimeToLive_timeout():
 	queue_free()
 
 func _on_Discharge_body_entered(body):
-	if body.get_name() == 'Zombie':
-		emit_signal( 'zombie_hited' )
+	if body.get_name() == 'Enemy':
+		emit_signal( 'enemy_hited' )
 		queue_free()

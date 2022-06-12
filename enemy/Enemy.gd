@@ -1,4 +1,4 @@
-class_name Zombie
+class_name Enemy
 extends KinematicBody2D
 
 var NORMAL_SPEED = 100
@@ -6,7 +6,6 @@ var NORMAL_SPEED = 100
 var current_state
 var speed
 var velocity
-var player_pos
 
 func _ready():
 	speed = NORMAL_SPEED
@@ -21,12 +20,9 @@ func _process(delta):
 			pass
 			
 		'Attack':
-			move_towards_player( delta )
+			move_towards_player( delta, $StateMachine.get_orb_area().get_global_position() )
 
-func set_player_position( new_player_pos ):
-	player_pos = new_player_pos
-
-func move_towards_player( delta ):
+func move_towards_player( delta, player_pos ):
 	if position.x < player_pos.x:
 		velocity.x = 1
 	elif position.x > player_pos.x:
@@ -35,9 +31,9 @@ func move_towards_player( delta ):
 		velocity.x = 0
 	
 	if position.y < player_pos.y:
-		velocity.y = 1
+		velocity.y = 1.0 / 2
 	elif position.y > player_pos.y:
-		velocity.y = -1
+		velocity.y = -1.0 / 2
 	else:
 		velocity.y = 0
 	
