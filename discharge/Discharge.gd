@@ -15,7 +15,27 @@ func _ready():
 
 func _process( delta ):
 	if visible:
-		position.x = position.x + speed * delta * direction
+		match direction:
+			'Right':
+				position.x = position.x + speed * delta
+			'Left':
+				position.x = position.x + speed * delta * -1
+			'Up':
+				position.y = position.y + speed * delta * -1
+			'Down':
+				position.y = position.y + speed * delta
+			'RightUp':
+				position.x = position.x + speed * delta
+				position.y = position.y + speed / 2 * delta * -1
+			'RightDown':
+				position.x = position.x + speed * delta
+				position.y = position.y + speed / 2 * delta
+			'LeftUp':
+				position.x = position.x + speed * delta * -1
+				position.y = position.y + speed / 2 * delta * -1
+			'LeftDown':
+				position.x = position.x + speed * delta * -1
+				position.y = position.y + speed / 2 * delta
 
 func init( init_pos, init_dir ):
 	print_debug( 'DISCHARGE: Init')

@@ -10,7 +10,7 @@ func update(_delta: float) -> void:
 	pass
 
 func _on_AttackArea_area_entered(area):
-	if area.get_name() == 'Orb':
+	if area.get_name() == 'PlayerArea':
 		orb_area = area
 		state_machine.transition_to('Attack')
 		print_debug('ENEMY: Paso a attack')
