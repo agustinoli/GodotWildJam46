@@ -14,3 +14,8 @@ func _on_Player_discharge():
 	add_child( discharge_node )
 	discharge_node.init( $Player.get_position(), $Player.get_current_dir() )
 
+func _on_Player_orb_selected(orb_type):
+	$HUD.set_current_orb(orb_type)
+
+func _on_Player_orb_picked(orb_type):
+	$HUD.set_orb_picked(orb_type)

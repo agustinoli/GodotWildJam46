@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://enemy/Enemy.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://orb/GreenOrb.tscn" type="PackedScene" id=5]
 [ext_resource path="res://orb/BlueOrb.tscn" type="PackedScene" id=6]
 [ext_resource path="res://orb/RedOrb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://hud/HUD.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 15.1173, 29.114, 32.1971, 36.1469, 50.6165, 27.1046, 63.3426, 37.8214, 32.8669, 56.9106, 0.046936, 37.8214 )
@@ -248,4 +249,8 @@ position = Vector2( 121, 364 )
 [node name="RedOrb" parent="." instance=ExtResource( 7 )]
 position = Vector2( -332, 259 )
 
+[node name="HUD" parent="." instance=ExtResource( 8 )]
+
 [connection signal="discharge" from="Player" to="." method="_on_Player_discharge"]
+[connection signal="orb_picked" from="Player" to="." method="_on_Player_orb_picked"]
+[connection signal="orb_selected" from="Player" to="." method="_on_Player_orb_selected"]
