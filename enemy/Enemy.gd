@@ -2,14 +2,17 @@ class_name Enemy
 extends KinematicBody2D
 
 var NORMAL_SPEED = 100
+var MAX_HP = 100
 
 var current_state
 var speed
 var velocity
+var hp
 
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
+	hp = MAX_HP
 
 func _process(delta):
 	
@@ -46,6 +49,10 @@ func move_towards_player( delta, player_pos ):
 	
 	move_and_collide( velocity * delta )
 
-# TODO: pasar como argumento la cantidad de daño recibido y restarle HP a self
-func receive_hit():
-	queue_free()
+func receive_hit(damage_received):
+	hp -= damage_received
+	
+	print_debug(str('ENEMY: Hited (HP=',hp,')'))
+	
+	if hp <= 0:
+		queue_free()

@@ -1,9 +1,12 @@
 extends Area2D
 
+var DAMAGE = 60
+
 var direction
 
 func _ready():
 	visible = false
+	$CollisionShape2D.disabled = true
 	$TimeToLive.wait_time = 3
 
 func _process( delta ):
@@ -38,11 +41,13 @@ func cast():
 	print_debug( 'FLAME: Cast')
 	self.set_process(true)
 	visible = true
+	$CollisionShape2D.disabled = false
 	$AnimatedSprite.play()
 	$TimeToLive.start()
 
 func _on_TimeToLive_timeout():
 	visible = false
+	$CollisionShape2D.disabled = true
 	self.set_process(true)
 
 func set_direction( dir ):
@@ -50,4 +55,5 @@ func set_direction( dir ):
 
 func _on_Flame_body_entered(body):
 	if body.get_name() == 'Enemy':
-		body.receive_hit()
+		print_debug('FLAME: Enemy hited')
+		body.receive_hit(DAMAGE)

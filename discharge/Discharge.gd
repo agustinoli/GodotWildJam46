@@ -1,6 +1,7 @@
 extends Area2D
 
 var NORMAL_SPEED = 500
+var DAMAGE = 25
 
 var direction
 var speed
@@ -46,5 +47,6 @@ func _on_TimeToLive_timeout():
 
 func _on_Discharge_body_entered(body):
 	if body.get_name() == 'Enemy':
-		body.receive_hit()
+		print_debug('DISCHARGE: Enemy hited')
+		body.receive_hit(DAMAGE)
 		queue_free()
