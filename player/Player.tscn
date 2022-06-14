@@ -11,25 +11,25 @@
 radius = 9.33333
 height = 30.0
 
-[sub_resource type="AtlasTexture" id=129]
+[sub_resource type="AtlasTexture" id=89]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2560, 0, 128, 128 )
+region = Rect2( 0, 128, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=130]
+[sub_resource type="AtlasTexture" id=90]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2688, 0, 128, 128 )
+region = Rect2( 128, 128, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=131]
+[sub_resource type="AtlasTexture" id=91]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2816, 0, 128, 128 )
+region = Rect2( 256, 128, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=132]
+[sub_resource type="AtlasTexture" id=92]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 2944, 0, 128, 128 )
+region = Rect2( 384, 128, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=121]
 flags = 4
@@ -71,25 +71,25 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2432, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=89]
+[sub_resource type="AtlasTexture" id=129]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 128, 128, 128 )
+region = Rect2( 2560, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=90]
+[sub_resource type="AtlasTexture" id=130]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 128, 128, 128, 128 )
+region = Rect2( 2688, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=91]
+[sub_resource type="AtlasTexture" id=131]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 256, 128, 128, 128 )
+region = Rect2( 2816, 0, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=92]
+[sub_resource type="AtlasTexture" id=132]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 384, 128, 128, 128 )
+region = Rect2( 2944, 0, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=93]
 flags = 4
@@ -1013,9 +1013,9 @@ region = Rect2( 2944, 512, 128, 128 )
 
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ) ],
+"frames": [ SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
 "loop": true,
-"name": "DieLeft",
+"name": "IdleLeftUp",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 121 ), SubResource( 122 ), SubResource( 123 ), SubResource( 124 ), SubResource( 125 ), SubResource( 126 ), SubResource( 127 ), SubResource( 128 ) ],
@@ -1023,9 +1023,9 @@ animations = [ {
 "name": "AttackLeft",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 89 ), SubResource( 90 ), SubResource( 91 ), SubResource( 92 ) ],
+"frames": [ SubResource( 129 ), SubResource( 130 ), SubResource( 131 ), SubResource( 132 ) ],
 "loop": true,
-"name": "IdleLeftUp",
+"name": "DieLeft",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 93 ), SubResource( 94 ), SubResource( 95 ), SubResource( 96 ) ],
@@ -1198,6 +1198,7 @@ zoom = Vector2( 0.5, 0.5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 24 )
 animation = "DamageLeftDown"
+frame = 3
 playing = true
 
 [node name="StateMachine" type="Node" parent="."]

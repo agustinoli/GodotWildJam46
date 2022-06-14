@@ -54,6 +54,6 @@ func set_direction( dir ):
 	direction = dir
 
 func _on_Flame_body_entered(body):
-	if body.get_name() == 'Enemy':
+	if body is Enemy:
 		print_debug('FLAME: Enemy hited')
 		body.receive_hit(DAMAGE)

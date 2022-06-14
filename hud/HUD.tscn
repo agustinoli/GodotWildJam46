@@ -32,7 +32,7 @@ position = Vector2( 120, 25 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
-[node name="Disclaimer" type="Label" parent="Background"]
+[node name="GameTitle" type="Label" parent="Background"]
 margin_left = 200.0
 margin_top = 19.0
 margin_right = 289.0
