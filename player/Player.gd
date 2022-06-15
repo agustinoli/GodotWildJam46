@@ -39,12 +39,7 @@ func _process(_delta):
 	parse_input()
 
 func parse_input():
-	if has_blue_orb and Input.is_action_just_pressed( "use_blue_orb" ):
-		emit_signal("discharge")
-	if has_green_orb and Input.is_action_just_pressed( "use_green_orb" ):
-		pass
-	if has_red_orb and Input.is_action_just_pressed( "use_red_orb" ):
-		pass
+	pass
 
 func orb_picked( orb_type ):
 	match orb_type:
