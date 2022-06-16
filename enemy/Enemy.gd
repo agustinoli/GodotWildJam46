@@ -6,6 +6,7 @@ var NORMAL_SPEED = 100
 var current_state
 var speed
 var velocity
+var player
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
 var current_direction: String = "Down" setget set_current_dir, get_current_dir
@@ -40,15 +41,8 @@ func _ready():
 	velocity = Vector2.ZERO
 	
 
-func _process(delta):
-	
-	current_state = $StateMachine.state.get_name()
-	
-	match current_state:
-		'Idle':
-			pass
-		'Attack':
-			move_towards_player( delta, $StateMachine.get_orb_area().get_global_position() )
+func _process(_delta):
+	pass
 
 func move_towards_player( delta, player_pos ):
 	if position.x < player_pos.x:
@@ -74,8 +68,6 @@ func move_towards_player( delta, player_pos ):
 	self.set_current_dir(direction2str(velocity))
 # warning-ignore:return_value_discarded
 	move_and_collide( velocity * delta )
-
-
 
 func direction2str(direction):
 	var angle = direction.angle()
