@@ -9,8 +9,7 @@ var speed
 var velocity
 
 var player
-var hp
-hp = MAX_HP
+var hp = MAX_HP
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
 var current_direction: String = "Down" setget set_current_dir, get_current_dir
@@ -44,7 +43,7 @@ func get_animationSprite () -> Node:
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
-=
+
 func _process(_delta):
 	pass
 

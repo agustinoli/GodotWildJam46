@@ -14,12 +14,7 @@ func handle_input(_event: InputEvent) -> void:
 func update(_delta: float) -> void:
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_up") or Input.is_action_pressed("move_right") or Input.is_action_pressed("move_down"):
 		state_machine.transition_to("Run")
-	if player.has_blue_orb and Input.is_action_just_pressed( "use_blue_orb" ):
-		state_machine.transition_to("Attack")
-	if player.has_green_orb and Input.is_action_just_pressed( "use_green_orb" ):
-		pass
-	if player.has_red_orb and Input.is_action_just_pressed( "use_red_orb" ):
-		pass
+
 
 
 # Virtual function. Corresponds to the `_physics_process()` callback.
