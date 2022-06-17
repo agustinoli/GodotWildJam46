@@ -46,7 +46,7 @@ func _on_TimeToLive_timeout():
 	queue_free()
 
 func _on_Discharge_body_entered(body):
-	if body is Enemy:
-		print_debug('DISCHARGE: Enemy hited')
+	if body is Enemy or body is Rock:
+		print_debug('DISCHARGE: Body hited')
 		body.receive_hit(DAMAGE)
 		queue_free()

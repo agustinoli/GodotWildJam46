@@ -9,7 +9,7 @@ func _ready():
 	$CollisionShape2D.disabled = true
 	$TimeToLive.wait_time = 3
 
-func _process( delta ):
+func _process( _delta ):
 	if visible:
 		match direction:
 			'Right':
