@@ -1230,9 +1230,5 @@ frames = ExtResource( 1 )
 animation = "LeftIdle"
 frame = 2
 playing = true
-[node name="Flame" parent="." instance=ExtResource( 6 )]
-position = Vector2( 25, -25 )
-rotation = 0.785398
-scale = Vector2( 0.3, 0.3 )
 
 [connection signal="timeout" from="SprintTimer" to="." method="_on_SprintTimer_timeout"]
