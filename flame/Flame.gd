@@ -1,13 +1,14 @@
 extends Area2D
 
-var DAMAGE = 60
+export var DAMAGE = 60
+export var FlameTime = 3
 
 var direction
 
 func _ready():
 	visible = false
 	$CollisionShape2D.disabled = true
-	$TimeToLive.wait_time = 3
+	$TimeToLive.wait_time = FlameTime
 
 func _process( _delta ):
 	if visible:

@@ -42,7 +42,6 @@ func _ready():
 	$SprintTimer.wait_time = 1
 
 func _process(_delta):
-	parse_input()
 	$Flame.set_direction(current_direction)
 
 func parse_input():
@@ -56,7 +55,7 @@ func parse_input():
 		orb_selected = 'RedOrb'
 		emit_signal("orb_selected","RED")
 	if Input.is_action_just_pressed("use_orb"):
-		use_orb()
+		$StateMachine.transition_to('Attack')
 
 func orb_picked( orb_type ):
 	match orb_type:
@@ -78,3 +77,6 @@ func use_orb():
 			pass
 		'RedOrb':
 			$Flame.cast()
+
+func _on_SprintTimer_timeout():
+	pass

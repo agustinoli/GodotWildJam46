@@ -1,7 +1,9 @@
 # Virtual base class for all states.
 extends State
 
+export var AttackAnimationSpeed = 2
 onready var player = self.get_node('../../')
+onready var animationSprite = self.get_node('../../AnimatedSprite')
 
 # Reference to the state machine, to call its `transition_to()` method directly.
 # That's one unorthodox detail of our state implementation, as it adds a dependency between the
@@ -15,8 +17,7 @@ func handle_input(_event: InputEvent) -> void:
 
 # Virtual function. Corresponds to the `_process()` callback.
 func update(_delta: float) -> void:
-		emit_signal("discharge")
-
+	pass
 
 # Virtual function. Corresponds to the `_physics_process()` callback.
 func physics_update(_delta: float) -> void:
@@ -26,10 +27,18 @@ func physics_update(_delta: float) -> void:
 # Virtual function. Called by the state machine upon changing the active state. The `msg` parameter
 # is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	print_debug("entre a atackar")
-
+	print_debug("entre a atacar")
+	animationSprite.set_speed_scale(AttackAnimationSpeed)
+	animationSprite.play(player.get_current_dir() + "Attack" )
+	animationSprite.connect("animation_finished",self,'on_Animation_finished')	
+	player.use_orb()
 
 # Virtual function. Called by the state machine before changing the active state. Use this function
 # to clean up the state.
 func exit() -> void:
-	pass
+	print_debug("sali de atacar")
+	animationSprite.set_speed_scale(1)
+
+
+func on_Animation_finished():
+	state_machine.transition_to('Idle')

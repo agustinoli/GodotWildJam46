@@ -239,7 +239,7 @@ tile_data = PoolIntArray( -1507325, 0, 327683, -1507324, 0, 327682, -1507323, 0,
 [node name="YSort" type="YSort" parent="."]
 
 [node name="BlueOrb" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 420, 415 )
+position = Vector2( 378, 395 )
 
 [node name="GreenOrb" parent="YSort" instance=ExtResource( 5 )]
 position = Vector2( 617, 517 )
