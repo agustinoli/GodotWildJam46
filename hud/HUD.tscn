@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://hud/HUD.gd" type="Script" id=1]
+[ext_resource path="res://hud/blue_orb.png" type="Texture" id=2]
+[ext_resource path="res://hud/red_orb.png" type="Texture" id=3]
+[ext_resource path="res://hud/green_orb.png" type="Texture" id=4]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="Separator" type="ColorRect" parent="."]
+margin_right = 303.0
+margin_bottom = 53.0
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 300.0
+margin_bottom = 50.0
+color = Color( 0.363281, 0.327805, 0.327805, 1 )
+
+[node name="BlueOrbSprite" type="Sprite" parent="Background"]
+position = Vector2( 30, 25 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="GreenOrbSprite" type="Sprite" parent="Background"]
+position = Vector2( 75, 25 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="RedOrbSprite" type="Sprite" parent="Background"]
+position = Vector2( 120, 25 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="GameTitle" type="Label" parent="Background"]
+margin_left = 200.0
+margin_top = 19.0
+margin_right = 289.0
+margin_bottom = 33.0
+text = "TINF"

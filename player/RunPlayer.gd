@@ -33,6 +33,10 @@ func physics_update(_delta: float) -> void:
 
 	move_direction.x = int(RIGHT) - int(LEFT)
 	move_direction.y = int(DOWN) - int(UP)
+	
+	# Si va en diagonal, velocidad vertical disminuida
+	if move_direction.x != 0 and move_direction.y != 0:
+		move_direction.y /= 2
 
 	if LEFT || RIGHT || UP || DOWN:
 		player.set_facing(move_direction)
