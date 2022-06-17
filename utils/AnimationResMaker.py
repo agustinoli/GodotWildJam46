@@ -23,50 +23,50 @@ num_animations =0
 
 # print('El numero de animaciones es:',num_animations)
 
-my_40_animations_name = []
+myanimations_name = []
 
 for dir in directions:
     for anim in animations:
         name = dir+anim
-        my_40_animations_name += {name}
+        myanimations_name += {name}
 
-# print (my_40_animations_name)
+# print (myanimations_name)
 
 
 
-my_40_animations_size = [4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4]
+myanimations_size = [4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4,4,8,8,8,4]
 
-# print(my_40_animations_size)
+# print(myanimations_size)
 
-# print(len(my_40_animations_size))
+# print(len(myanimations_size))
 
 
 frame_count = 0
 anim_count = 0
 anim_SubResource=0
 aux_str = ""
-my_40_subres = []
+mysubres = []
 
-for i in range(len(my_40_animations_size)):
-    for j in range(my_40_animations_size[i]):
+for i in range(len(myanimations_size)):
+    for j in range(myanimations_size[i]):
         frame_count += 1
         aux_str += "SubResource( %i ), " % frame_count
-    my_40_subres.insert(i, aux_str) 
-    # print("Para my_40_animations_name %s, tengo my_40_subres:" % my_40_animations_name[i] , my_40_subres[i] )   
+    mysubres.insert(i, aux_str) 
+    # print("Para myanimations_name %s, tengo mysubres:" % myanimations_name[i] , mysubres[i] )   
     aux_str = ""
 
 
-# for i in range(len(my_40_animations_name)):
-#     print(my_40_animations_name[i], my_40_subres[i])
+# for i in range(len(myanimations_name)):
+#     print(myanimations_name[i], mysubres[i])
 # print("frame_count",frame_count)
 # print("anim_count",anim_count)
 
 # print("SALIDA DEL PROGRAMA")
 
-my_40_animations_string = []
-for i in range(len(my_40_animations_name)):
-    my_40_animations_string.insert(i, "{ \"frames\": ["+ my_40_subres[i] +"], \"loop\": true, \"name\": \""+ my_40_animations_name[i] +"\", \"speed\": 5.0},")
+myanimations_string = []
+for i in range(len(myanimations_name)):
+    myanimations_string.insert(i, "{ \"frames\": ["+ mysubres[i] +"], \"loop\": true, \"name\": \""+ myanimations_name[i] +"\", \"speed\": 5.0},")
 
 
 for i in range(40):
-    print(my_40_animations_string[i])
+    print(myanimations_string[i])
