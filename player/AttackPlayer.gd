@@ -27,17 +27,16 @@ func physics_update(_delta: float) -> void:
 # Virtual function. Called by the state machine upon changing the active state. The `msg` parameter
 # is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
-	print_debug("entre a atacar")
 	animationSprite.set_speed_scale(AttackAnimationSpeed)
 	animationSprite.play(player.get_current_dir() + "Attack" )
-	animationSprite.connect("animation_finished",self,'on_Animation_finished')	
+	animationSprite.connect("animation_finished",self,'on_Animation_finished')
 	player.use_orb()
 
 # Virtual function. Called by the state machine before changing the active state. Use this function
 # to clean up the state.
 func exit() -> void:
-	print_debug("sali de atacar")
 	animationSprite.set_speed_scale(1)
+	animationSprite.disconnect("animation_finished",self,'on_Animation_finished')
 
 
 func on_Animation_finished():

@@ -22,13 +22,11 @@ scale = Vector2( 0.75, 0.75 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 24 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.5, 0.5 )
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -44,7 +42,6 @@ script = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="PlayerArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 position = Vector2( 0, 9.33333 )
@@ -54,11 +51,10 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
-animation = "DownAttack"
-frame = 4
+animation = "RightAttack"
+frame = 5
 playing = true
 
 [node name="Flame" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [connection signal="timeout" from="SprintTimer" to="." method="_on_SprintTimer_timeout"]

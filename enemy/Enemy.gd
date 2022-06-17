@@ -61,7 +61,7 @@ func move_towards_player( delta, player_pos ):
 		velocity.y = -1.0 / 2
 	else:
 		velocity.y = 0
-	
+		
 	if velocity.x == 1:
 		scale.x = scale.y * -1
 	elif velocity.x == -1:
