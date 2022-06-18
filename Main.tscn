@@ -77,6 +77,8 @@ sprite_frames_file = "res://skeleton/skeleton.tres"
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="discharge" from="Navigation2D/YSort/Player" to="." method="_on_Player_discharge"]
 [connection signal="orb_picked" from="Navigation2D/YSort/Player" to="." method="_on_Player_orb_picked"]
 [connection signal="orb_selected" from="Navigation2D/YSort/Player" to="." method="_on_Player_orb_selected"]

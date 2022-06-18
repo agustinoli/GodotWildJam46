@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/discharge.wav-5fc90903af736f31d87f0c8e9e625464.sample"
+
+[deps]
+
+source_file="res://discharge/discharge.wav"
+dest_files=[ "res://.import/discharge.wav-5fc90903af736f31d87f0c8e9e625464.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
