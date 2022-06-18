@@ -3,7 +3,7 @@ extends KinematicBody2D
 signal discharge
 signal orb_selected
 signal orb_picked
-
+signal hp_changed
 
 export var MAX_HP = 100
 export var NORMAL_SPEED = 3
@@ -101,6 +101,7 @@ func green_orb():
 
 func receive_hit(damage_received):
 	hp -= damage_received
+	emit_signal("hp_changed",hp)
 	print_debug(str('PLAYER: Hited (HP=',hp,')'))
 	if hp <= 0:
 		$StateMachine.transition_to("Die")

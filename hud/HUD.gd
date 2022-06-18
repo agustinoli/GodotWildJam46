@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var life_indicator_rect_size: Vector2 =  Vector2(300,10)
+
 func _ready():
 	$Background/RedOrbSprite.visible = false
 	$Background/GreenOrbSprite.visible = false
@@ -29,3 +31,8 @@ func set_orb_picked(orb):
 			$Background/GreenOrbSprite.visible = true
 		'BLUE':
 			$Background/BlueOrbSprite.visible = true
+
+
+func _on_Player_hp_changed(hp):
+	print_debug(hp)
+	$LifeIndicator._set_size(Vector2(life_indicator_rect_size.x*(hp/100),life_indicator_rect_size.y))

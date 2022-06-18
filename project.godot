@@ -49,6 +49,10 @@ run/main_scene="res://Main.tscn"
 boot_splash/image="res://GWJ.png"
 config/icon="res://tinf.png"
 
+[autoload]
+
+ScreenFade="*res://autoload/ScreenFade.tscn"
+
 [input]
 
 move_up={

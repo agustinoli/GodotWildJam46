@@ -21,3 +21,4 @@ func _on_Player_orb_selected(orb_type):
 
 func _on_Player_orb_picked(orb_type):
 	$HUD.set_orb_picked(orb_type)
+

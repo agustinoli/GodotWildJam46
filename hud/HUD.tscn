@@ -18,23 +18,29 @@ margin_bottom = 50.0
 color = Color( 0.363281, 0.327805, 0.327805, 1 )
 
 [node name="BlueOrbSprite" type="Sprite" parent="Background"]
-position = Vector2( 30, 25 )
+position = Vector2( 29.8, 19.8 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="GreenOrbSprite" type="Sprite" parent="Background"]
-position = Vector2( 75, 25 )
+position = Vector2( 74.8, 19.8 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 4 )
 
 [node name="RedOrbSprite" type="Sprite" parent="Background"]
-position = Vector2( 120, 25 )
+position = Vector2( 119.8, 19.8 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
 [node name="GameTitle" type="Label" parent="Background"]
-margin_left = 200.0
-margin_top = 19.0
-margin_right = 289.0
-margin_bottom = 33.0
+margin_left = 182.0
+margin_top = 12.0
+margin_right = 271.0
+margin_bottom = 26.0
 text = "TINF"
+
+[node name="LifeIndicator" type="ColorRect" parent="."]
+margin_top = 40.0
+margin_right = 300.0
+margin_bottom = 50.0
+color = Color( 0.0980392, 0.639216, 0.0509804, 1 )

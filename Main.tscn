@@ -79,5 +79,6 @@ scale = Vector2( 0.75, 0.75 )
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="discharge" from="Navigation2D/YSort/Player" to="." method="_on_Player_discharge"]
+[connection signal="hp_changed" from="Navigation2D/YSort/Player" to="HUD" method="_on_Player_hp_changed"]
 [connection signal="orb_picked" from="Navigation2D/YSort/Player" to="." method="_on_Player_orb_picked"]
 [connection signal="orb_selected" from="Navigation2D/YSort/Player" to="." method="_on_Player_orb_selected"]
