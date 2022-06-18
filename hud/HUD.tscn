@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hud/HUD.gd" type="Script" id=1]
 [ext_resource path="res://hud/blue_orb.png" type="Texture" id=2]
 [ext_resource path="res://hud/red_orb.png" type="Texture" id=3]
 [ext_resource path="res://hud/green_orb.png" type="Texture" id=4]
+[ext_resource path="res://fonts/KdamThmorPro-Regular.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+extra_spacing_char = 5
+font_data = ExtResource( 5 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -33,8 +39,11 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
 [node name="GameTitle" type="Label" parent="Background"]
-margin_left = 200.0
-margin_top = 19.0
-margin_right = 289.0
-margin_bottom = 33.0
+margin_left = 209.0
+margin_top = 7.0
+margin_right = 298.0
+margin_bottom = 46.0
+custom_colors/font_color = Color( 0.796078, 0.815686, 0.2, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "TINF"
