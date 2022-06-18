@@ -35,7 +35,7 @@ position = Vector2( 467, 470 )
 position = Vector2( 617, 517 )
 
 [node name="RedOrb" parent="Navigation2D/YSort" instance=ExtResource( 7 )]
-position = Vector2( 707, 1235 )
+position = Vector2( 418, 375 )
 
 [node name="Rock" parent="Navigation2D/YSort" instance=ExtResource( 10 )]
 position = Vector2( 914, 1532 )
@@ -61,7 +61,7 @@ tile_data = PoolIntArray( -917481, 2, 0, -589816, 2, 0, 131098, 2, 65541, 262162
 position = Vector2( 323, 366 )
 
 [node name="Enemy2" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 691, 1335 )
+position = Vector2( 675, 1758 )
 scale = Vector2( 0.75, 0.75 )
 sprite_frames_file = "res://zombie/zombie.tres"
 

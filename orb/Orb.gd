@@ -2,7 +2,7 @@ class_name Orb
 extends Area2D
 
 func _ready():
-	$AnimatedSprite.play()
+	pass
 
 func _process( _delta ):
 	pass
