@@ -44,6 +44,11 @@ func set_facing(new_facing: Vector2):
 func get_facing() -> Vector2:
 	return facing
 
+
+func get_animationSprite () -> Node:
+	return $AnimatedSprite
+
+
 func _ready():
 	has_blue_orb = false
 	has_green_orb = false
@@ -92,6 +97,13 @@ func green_orb():
 	$SprintTimer.start()
 	$AnimatedSprite.speed_scale *= speed_boost_scale 
 	speed = NORMAL_SPEED * speed_boost_scale
+
+
+func receive_hit(damage_received):
+	hp -= damage_received
+	print_debug(str('PLAYER: Hited (HP=',hp,')'))
+	if hp <= 0:
+		$StateMachine.transition_to("Die")
 
 
 func _on_SprintTimer_timeout():

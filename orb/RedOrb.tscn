@@ -4,20 +4,20 @@
 [ext_resource path="res://orb/red.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 65.0077
+radius = 60.0
 
 [node name="RedOrb" type="Area2D"]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_RedOrb_body_entered"]

@@ -882,26 +882,6 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 2432, 768, 128, 128 )
 
-[sub_resource type="AtlasTexture" id=213]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2560, 768, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=214]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2688, 768, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=215]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2816, 768, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=216]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 2944, 768, 128, 128 )
-
 [sub_resource type="AtlasTexture" id=217]
 flags = 4
 atlas = ExtResource( 1 )
@@ -921,6 +901,26 @@ region = Rect2( 3328, 768, 128, 128 )
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 3456, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=213]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2560, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=214]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2688, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=215]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2816, 768, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=216]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 2944, 768, 128, 128 )
 
 [sub_resource type="AtlasTexture" id=221]
 flags = 4
@@ -1419,7 +1419,7 @@ animations = [ {
 "name": "DownAttack",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 213 ), SubResource( 214 ), SubResource( 215 ), SubResource( 216 ), SubResource( 217 ), SubResource( 218 ), SubResource( 219 ), SubResource( 220 ) ],
+"frames": [ SubResource( 217 ), SubResource( 218 ), SubResource( 219 ), SubResource( 220 ), SubResource( 213 ), SubResource( 214 ), SubResource( 215 ), SubResource( 216 ) ],
 "loop": true,
 "name": "DownDie",
 "speed": 5.0

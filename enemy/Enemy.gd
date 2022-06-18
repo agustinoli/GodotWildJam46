@@ -80,7 +80,7 @@ func direction2str(direction):
 	return self.get_dir(index)
 
 func receive_hit(damage_received):
-	hp -= damage_received	
+	hp -= damage_received
 	print_debug(str('ENEMY: Hited (HP=',hp,')'))
 	if hp <= 0:
 		$StateMachine.transition_to("Die")

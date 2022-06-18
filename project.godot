@@ -46,7 +46,7 @@ _global_script_class_icons={
 
 config/name="ORB"
 run/main_scene="res://Main.tscn"
-boot_splash/image="res://Wildling-Wallpaper 1080.png"
+boot_splash/image="res://GWJ.png"
 config/icon="res://tinf.png"
 
 [input]

@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/green.png-1a3fa8e0032474459d1d52616e648fb7.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://orb/green.png"
+dest_files=[ "res://.import/green.png-1a3fa8e0032474459d1d52616e648fb7.stex" ]
+
 [params]
 
 compress/mode=0

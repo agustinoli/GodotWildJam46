@@ -55,7 +55,7 @@ func _on_TimeToLive_timeout():
 
 func _on_Discharge_body_entered(body):
 	if body is Enemy or body is Rock:
-		print_debug('DISCHARGE: Body hited')		
+		print_debug('DISCHARGE: Body hited')
 		audioPlayer.set_stream(hittedAudio)
 		audioPlayer.play()
 		body.receive_hit(DAMAGE)

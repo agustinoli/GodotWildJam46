@@ -1,40 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://orb/Orb.gd" type="Script" id=1]
-[ext_resource path="res://orb/blue_orb.png" type="Texture" id=2]
+[ext_resource path="res://orb/blue.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 65.0077
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 128, 128 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 128, 128 )
-
-[sub_resource type="SpriteFrames" id=4]
-animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [node name="BlueOrb" type="Area2D"]
-scale = Vector2( 0.25, 0.25 )
+scale = Vector2( 0.2, 0.2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 4 )
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_BlueOrb_body_entered"]

@@ -1,6 +1,8 @@
 extends State
 
 onready var enemy = self.get_node('../../')
+export var Attack_speed_scale = 1.5
+export var DAMAGE = 20
 var my_pos
 var player_pos
 
@@ -26,13 +28,13 @@ func physics_update(delta: float) -> void:
 # is a dictionary with arbitrary data the state can use to initialize itself.
 func enter(_msg := {}) -> void:
 	print_debug("Entre a attack")
-	enemy.NORMAL_SPEED *= 1.25
+	enemy.NORMAL_SPEED *= Attack_speed_scale
 
 
 # Virtual function. Called by the state machine before changing the active state. Use this function
 # to clean up the state.
 func exit() -> void:
-	enemy.NORMAL_SPEED /= 1.25
+	enemy.NORMAL_SPEED /= Attack_speed_scale
 
 
 func _on_AttackArea_area_entered(area):
@@ -43,3 +45,8 @@ func _on_AttackArea_area_entered(area):
 func _on_AttackArea_area_exited(area):
 	if area.get_name() == 'PlayerArea':
 		state_machine.transition_to('Chase')
+
+
+func _on_AttackSurface_body_entered(body):
+	if body.get_name() == 'Player':
+		body.receive_hit(DAMAGE)
