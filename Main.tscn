@@ -29,7 +29,7 @@ tile_data = PoolIntArray( -1507325, 0, 327683, -1507324, 0, 327682, -1507323, 0,
 [node name="YSort" type="YSort" parent="Navigation2D"]
 
 [node name="BlueOrb" parent="Navigation2D/YSort" instance=ExtResource( 6 )]
-position = Vector2( 835, 1292 )
+position = Vector2( 467, 470 )
 
 [node name="GreenOrb" parent="Navigation2D/YSort" instance=ExtResource( 5 )]
 position = Vector2( 617, 517 )
@@ -58,15 +58,22 @@ format = 1
 tile_data = PoolIntArray( -917481, 2, 0, -589816, 2, 0, 131098, 2, 65541, 262162, 2, 0, 327740, 0, 0, 720962, 0, 0, 786472, 0, 65536, 1048606, 0, 1, 1048616, 0, 2, 1245214, 0, 0, 1245235, 0, 2, 1376298, 0, 65537, 1704004, 0, 0, 2621511, 0, 0, 3211324, 0, 0 )
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 1 )]
-position = Vector2( 859, 1177 )
+position = Vector2( 323, 366 )
 
 [node name="Enemy2" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 1245, 999 )
+position = Vector2( 691, 1335 )
 scale = Vector2( 0.75, 0.75 )
+sprite_frames_file = "res://zombie/zombie.tres"
+
+[node name="Enemy3" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
+position = Vector2( 722, 729 )
+scale = Vector2( 0.5625, 0.5625 )
+sprite_frames_file = "res://zombie/zombie.tres"
 
 [node name="Enemy" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 908, 1207 )
+position = Vector2( 1452, 944 )
 scale = Vector2( 0.75, 0.75 )
+sprite_frames_file = "res://skeleton/skeleton.tres"
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 

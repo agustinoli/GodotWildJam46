@@ -1,22 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://enemy/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://enemy/ChaseEnemy.gd" type="Script" id=2]
 [ext_resource path="res://fsm/stateMachine.gd" type="Script" id=3]
-[ext_resource path="res://skeleton/skeleton.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://zombie/zombie.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://enemy/IdleEnemy.gd" type="Script" id=5]
 [ext_resource path="res://enemy/DieEnemy.gd" type="Script" id=6]
+[ext_resource path="res://enemy/AttackEnemy.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.0
 height = 34.0
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 596.073
+radius = 434.115
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 108.0
 
 [node name="Enemy" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
+sprite_frames_file = "res://troll/troll.tres"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 14 )
@@ -35,6 +41,9 @@ script = ExtResource( 2 )
 [node name="Die" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource( 7 )
+
 [node name="ChaseArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
@@ -43,8 +52,15 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
 animation = "RightDownRun"
-frame = 2
 playing = true
+
+[node name="AttackArea" type="Area2D" parent="."]
+modulate = Color( 0.639216, 0.0313726, 0.0313726, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource( 3 )
 
 [connection signal="area_entered" from="ChaseArea" to="StateMachine/Idle" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="ChaseArea" to="StateMachine/Chase" method="_on_AttackArea_area_exited"]
+[connection signal="area_entered" from="AttackArea" to="StateMachine/Attack" method="_on_AttackArea_area_entered"]
+[connection signal="area_exited" from="AttackArea" to="StateMachine/Attack" method="_on_AttackArea_area_exited"]

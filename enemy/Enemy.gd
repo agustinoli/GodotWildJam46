@@ -1,19 +1,20 @@
 class_name Enemy
 extends KinematicBody2D
 
-var NORMAL_SPEED = 100
-var MAX_HP = 100
+export var NORMAL_SPEED = 100
+export var MAX_HP = 100
+export(String, FILE, "*.tres") var sprite_frames_file
 
 var current_state
 var speed
 var velocity
 
 var player
+
 var hp = MAX_HP
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
 var current_direction: String = "Down" setget set_current_dir, get_current_dir
-var facing = Vector2() setget set_facing, get_facing
 
 onready var navigator: Navigation2D = self.get_node('../../')
 
@@ -30,14 +31,6 @@ func get_dir(index: int) -> String:
 	return directions[index]
 
 
-func set_facing(new_facing: Vector2):
-	facing = new_facing
-
-
-func get_facing() -> Vector2:
-	return facing
-
-
 func get_animationSprite () -> Node:
 	return $AnimatedSprite
 
@@ -45,9 +38,13 @@ func get_animationSprite () -> Node:
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
+	var sprite_frames: SpriteFrames = load(sprite_frames_file)
+	$AnimatedSprite.set_sprite_frames(sprite_frames)
+
 
 func _process(_delta):
 	pass
+
 
 func move_towards_target( delta, target_pos ):
 	if position.x < target_pos.x:
@@ -83,10 +80,8 @@ func direction2str(direction):
 	return self.get_dir(index)
 
 func receive_hit(damage_received):
-	hp -= damage_received
-	
+	hp -= damage_received	
 	print_debug(str('ENEMY: Hited (HP=',hp,')'))
-	
 	if hp <= 0:
 		$StateMachine.transition_to("Die")
 

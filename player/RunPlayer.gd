@@ -5,7 +5,7 @@ extends State
 onready var player = self.get_node('../../')
 onready var animationSprite = self.get_node('../../AnimatedSprite')
 
-var NORMAL_SPEED = 3
+
 
 func _ready():
 	pass
@@ -44,7 +44,7 @@ func physics_update(_delta: float) -> void:
 	
 	player.set_current_dir(direction2str(player.facing))
 	
-	player.move_and_collide(move_direction * NORMAL_SPEED)
+	player.move_and_collide(move_direction * player.speed)
 	
 	var animation = player.get_current_dir() + "Run"
 	if animationSprite.get_animation() != animation:

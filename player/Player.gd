@@ -1,9 +1,19 @@
 extends KinematicBody2D
 
 signal discharge
-
 signal orb_selected
 signal orb_picked
+
+
+export var MAX_HP = 100
+export var NORMAL_SPEED = 3
+export var speed_boost_scale = 2
+export var sprint_time = 5
+
+
+var speed = NORMAL_SPEED
+var hp = MAX_HP
+
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
 var current_direction: String = "Down" setget set_current_dir, get_current_dir
@@ -39,7 +49,7 @@ func _ready():
 	has_green_orb = false
 	has_red_orb = false
 	orb_selected = ''
-	$SprintTimer.wait_time = 1
+	$SprintTimer.wait_time = sprint_time
 
 func _process(_delta):
 	$Flame.set_direction(current_direction)
@@ -74,9 +84,18 @@ func use_orb():
 		'BlueOrb':
 			emit_signal("discharge")
 		'GreenOrb':
-			pass
+			green_orb()
 		'RedOrb':
 			$Flame.cast()
 
+func green_orb():
+	$SprintTimer.start()
+	$AnimatedSprite.speed_scale *= speed_boost_scale 
+	speed = NORMAL_SPEED * speed_boost_scale
+
+
 func _on_SprintTimer_timeout():
-	pass
+	print_debug('termino el tiempo')
+	$SprintTimer.stop()
+	$AnimatedSprite.speed_scale /= speed_boost_scale 
+	speed = NORMAL_SPEED

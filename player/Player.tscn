@@ -53,7 +53,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "RightAttack"
-frame = 1
+frame = 6
 playing = true
 
 [node name="Flame" parent="." instance=ExtResource( 7 )]
