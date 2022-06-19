@@ -49,10 +49,11 @@ custom_fonts/font = SubResource( 1 )
 text = "TINF"
 
 [node name="Life" type="Label" parent="."]
-margin_left = 147.0
-margin_top = 14.0
-margin_right = 186.0
-margin_bottom = 44.0
+margin_left = 148.0
+margin_top = 11.0
+margin_right = 187.0
+margin_bottom = 41.0
+text = "100"
 align = 1
 valign = 1
 

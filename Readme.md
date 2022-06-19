@@ -11,6 +11,6 @@ https://github.com/flareteam/flare-game
 
 SFX made with: https://sfbgames.itch.io/chiptone
 
-Some singletons from: https://github.com/nezvers/Godot-GameTemplate
+Some singletons and scripts from: https://github.com/nezvers/Godot-GameTemplate
 
 Some other assets were made with Dalle Mini.

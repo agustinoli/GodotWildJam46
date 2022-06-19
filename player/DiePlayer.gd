@@ -1,7 +1,6 @@
 # Virtual base class for all states.
 extends State
 
-
 onready var player = self.get_node('../../')
 export var DieAnimationSpeed = 0.7
 # Virtual function. Receives events from the `_unhandled_input()` callback.
@@ -18,4 +17,5 @@ func enter(_msg := {}) -> void:
 
 
 func on_Animation_finished():
-	get_tree().paused = true
+	Game.emit_signal("ChangeScene","res://outros/GameOver.tscn")
+	player.get_animationSprite().disconnect("animation_finished",self,'on_Animation_finished')

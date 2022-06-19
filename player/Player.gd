@@ -104,6 +104,7 @@ func receive_hit(damage_received):
 	emit_signal("hp_changed",hp)
 	print_debug(str('PLAYER: Hited (HP=',hp,')'))
 	if hp <= 0:
+		$CollisionShape2D.call_deferred("set_disabled",true)
 		$StateMachine.transition_to("Die")
 
 

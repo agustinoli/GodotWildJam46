@@ -1,8 +1,8 @@
 extends Node2D
 
 
-signal ChangeScene	#Pass location of next scene file
-signal Exit			#Triggers closing the game
+signal ChangeScene    	#Pass location of next scene file
+signal Exit           	#Triggers closing the game
 
 onready var CurrentScene = null
 var NextScene
@@ -10,6 +10,7 @@ var NextScene
 var loader: = ResourceAsyncLoader.new()
 
 func _ready()->void:
+	print_debug("Game singleton ready")
 	connect("Exit",			self, "on_Exit")
 	connect("ChangeScene",	self, "on_ChangeScene")
 
@@ -29,7 +30,7 @@ func on_ChangeScene(scene)->void:
 	switch_scene()
 	ScreenFade.state = ScreenFade.IN
 
-func switch_scene()->void: 														#handles actual scene change
+func switch_scene()->void: #handles actual scene change
 	CurrentScene = NextScene
 	NextScene = null
 	get_tree().change_scene_to(CurrentScene)

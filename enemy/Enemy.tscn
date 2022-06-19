@@ -16,7 +16,7 @@ height = 34.0
 radius = 434.115
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 108.0
+radius = 74.0
 
 [node name="Enemy" type="KinematicBody2D"]
 position = Vector2( 0, 1 )
@@ -53,12 +53,11 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
-animation = "LeftAttack"
+animation = "UpRun"
 frame = 5
 playing = true
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 modulate = Color( 0.403922, 0, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
@@ -67,6 +66,7 @@ shape = SubResource( 3 )
 [node name="AttackSurface" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackSurface"]
+position = Vector2( -8, 2 )
 polygon = PoolVector2Array( -64, -2, -32, -22, -14, -2, -32, 24 )
 
 [connection signal="area_entered" from="ChaseArea" to="StateMachine/Idle" method="_on_AttackArea_area_entered"]
