@@ -4,6 +4,7 @@ extends KinematicBody2D
 export var NORMAL_SPEED = 100
 export var MAX_HP = 100
 export(String, FILE, "*.tres") var sprite_frames_file
+export var attack_timer_cooldown = 2
 
 var current_state
 var speed
@@ -14,7 +15,7 @@ var player
 var hp = MAX_HP
 
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
-var current_direction: String = "Down" setget set_current_dir, get_current_dir
+var current_direction: String = "Up" setget set_current_dir, get_current_dir
 
 onready var navigator: Navigation2D = self.get_node('../../')
 
@@ -34,12 +35,18 @@ func get_dir(index: int) -> String:
 func get_animationSprite () -> Node:
 	return $AnimatedSprite
 
+func get_attack_surface_shape() -> Node:
+	return $AttackSurface/CollisionPolygon2D
+
+func get_timer() -> Node:
+	return $Timer
 
 func _ready():
 	speed = NORMAL_SPEED
 	velocity = Vector2.ZERO
 	var sprite_frames: SpriteFrames = load(sprite_frames_file)
 	$AnimatedSprite.set_sprite_frames(sprite_frames)
+	$Timer.set_wait_time(attack_timer_cooldown)
 
 
 func _process(_delta):

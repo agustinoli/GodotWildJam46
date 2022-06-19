@@ -29,6 +29,7 @@ func physics_update(delta: float) -> void:
 func enter(_msg := {}) -> void:
 	print_debug("Entre a attack")
 	enemy.NORMAL_SPEED *= Attack_speed_scale
+	enemy.get_animationSprite().connect("animation_finished",self,'on_Animation_finished')
 
 
 # Virtual function. Called by the state machine before changing the active state. Use this function
@@ -48,5 +49,10 @@ func _on_AttackArea_area_exited(area):
 
 
 func _on_AttackSurface_body_entered(body):
-	if body.get_name() == 'Player':
+	if body.get_name() == 'Player' and enemy.get_timer().is_stopped():
 		body.receive_hit(DAMAGE)
+		enemy.get_timer().start()
+
+
+func on_Animation_finished():
+	enemy.get_animationSprite().disconnect("animation_finished",self,'on_Animation_finished')

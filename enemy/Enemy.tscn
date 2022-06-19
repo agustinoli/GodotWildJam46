@@ -23,6 +23,7 @@ position = Vector2( 0, 1 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
 sprite_frames_file = "res://skeleton/skeleton.tres"
+attack_timer_cooldown = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -46,7 +47,6 @@ script = ExtResource( 6 )
 script = ExtResource( 7 )
 
 [node name="ChaseArea" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea"]
 shape = SubResource( 2 )
@@ -54,7 +54,7 @@ shape = SubResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 4 )
 animation = "UpRun"
-frame = 5
+frame = 1
 playing = true
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -68,6 +68,11 @@ shape = SubResource( 3 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttackSurface"]
 position = Vector2( -8, 2 )
 polygon = PoolVector2Array( -64, -2, -32, -22, -14, -2, -32, 24 )
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 0
+wait_time = 2.0
+one_shot = true
 
 [connection signal="area_entered" from="ChaseArea" to="StateMachine/Idle" method="_on_AttackArea_area_entered"]
 [connection signal="area_exited" from="ChaseArea" to="StateMachine/Chase" method="_on_AttackArea_area_exited"]

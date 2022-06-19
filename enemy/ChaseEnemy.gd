@@ -12,7 +12,6 @@ func physics_update(delta: float) -> void:
 	enemy.get_animationSprite().play(enemy.get_current_dir() + "Run")
 
 
-
 func update(_delta: float) -> void:
 	pass
 	
