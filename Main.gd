@@ -24,5 +24,5 @@ func _on_Player_orb_picked(orb_type):
 
 
 func _on_Area2D_area_entered(area):
-	print_debug("Change of scene")
-#	Game.emit_signal("ChangeScene","FinalScene")
+	if area.get_name() == 'PlayerArea':
+		Game.emit_signal("ChangeScene","res://outros/GameWon.tscn")

@@ -76,15 +76,15 @@ position = Vector2( 932, 1587 )
 position = Vector2( 1004, 1592 )
 
 [node name="Player" parent="Navigation2D/YSort" instance=ExtResource( 1 )]
-position = Vector2( 3064, 1288 )
+position = Vector2( 2911, 1517 )
 
 [node name="Enemy2" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 675, 1758 )
+position = Vector2( 843, 1735 )
 scale = Vector2( 0.75, 0.75 )
 sprite_frames_file = "res://zombie/zombie.tres"
 
 [node name="Enemy4" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 545, 1708 )
+position = Vector2( 433, 1661 )
 scale = Vector2( 0.75, 0.75 )
 sprite_frames_file = "res://zombie/zombie.tres"
 
@@ -98,7 +98,7 @@ position = Vector2( 1452, 944 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Enemy5" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 675, 1758 )
+position = Vector2( 1489, 1481 )
 scale = Vector2( 0.75, 0.75 )
 sprite_frames_file = "res://zombie/zombie.tres"
 
@@ -113,12 +113,12 @@ scale = Vector2( 0.75, 0.75 )
 sprite_frames_file = "res://zombie/zombie.tres"
 
 [node name="Enemy8" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 2543, 495 )
+position = Vector2( 2837, 871 )
 scale = Vector2( 0.5625, 0.5625 )
 sprite_frames_file = "res://zombie/zombie.tres"
 
 [node name="Enemy9" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
-position = Vector2( 3350, 641 )
+position = Vector2( 3604, 1119 )
 scale = Vector2( 0.75, 0.75 )
 
 [node name="Enemy10" parent="Navigation2D/YSort" instance=ExtResource( 2 )]
