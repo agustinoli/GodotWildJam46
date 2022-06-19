@@ -68,20 +68,16 @@ func move_towards_target( delta, target_pos ):
 	else:
 		velocity.y = 0
 		
-	$AttackSurface.set_rotation(velocity.angle()+PI)
 	
 	velocity = velocity.normalized() * speed
-	self.set_current_dir(direction2str(velocity))
+	$AttackSurface.set_rotation(velocity.angle()+PI)
 # warning-ignore:return_value_discarded
 	move_and_collide( velocity * delta )
 
 
 func direction2str(direction):
 	var angle = direction.angle()
-	if angle < 0:
-		angle += 2 * PI
-	var index = floor(4 * angle / PI)
-#	print(direction,'  ',angle ,'  ',4 * angle / PI,'  ',index)
+	var index = wrapi(angle / (PI/4),0,8)
 	return self.get_dir(index)
 
 func receive_hit(damage_received):
@@ -90,9 +86,7 @@ func receive_hit(damage_received):
 	if hp <= 0:
 		$StateMachine.transition_to("Die")
 
-
 var path = []
-
 
 func move_along_path(distance):
 	var last_point = self.position
