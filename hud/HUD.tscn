@@ -39,24 +39,28 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
 [node name="GameTitle" type="Label" parent="Background"]
-<<<<<<< HEAD
-margin_left = 182.0
-margin_top = 12.0
-margin_right = 271.0
-margin_bottom = 26.0
-=======
-margin_left = 209.0
+margin_left = 227.0
 margin_top = 7.0
 margin_right = 298.0
 margin_bottom = 46.0
 custom_colors/font_color = Color( 0.615686, 0.756863, 0.270588, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
->>>>>>> 89232ceddfc41447f00de5fb3bfd28a49b86a8e9
 text = "TINF"
 
-[node name="LifeIndicator" type="ColorRect" parent="."]
-margin_top = 40.0
-margin_right = 300.0
-margin_bottom = 50.0
-color = Color( 0.0980392, 0.639216, 0.0509804, 1 )
+[node name="Life" type="Label" parent="."]
+margin_left = 147.0
+margin_top = 14.0
+margin_right = 186.0
+margin_bottom = 44.0
+align = 1
+valign = 1
+
+[node name="HpLabel" type="Label" parent="."]
+margin_left = 186.0
+margin_top = 12.0
+margin_right = 225.0
+margin_bottom = 42.0
+text = "HP"
+align = 1
+valign = 1

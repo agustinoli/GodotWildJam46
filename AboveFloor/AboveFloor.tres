@@ -23,7 +23,7 @@ points = PoolVector2Array( 101.847, 167.153, 81.0139, 167.153, 81.0139, 124.907,
 [resource]
 0/name = "trees.png 0"
 0/texture = ExtResource( 1 )
-0/tex_offset = Vector2( 0, -70 )
+0/tex_offset = Vector2( -32, -128 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 1, 10, 540, 381 )
 0/tile_mode = 2
@@ -36,8 +36,8 @@ points = PoolVector2Array( 101.847, 167.153, 81.0139, 167.153, 81.0139, 124.907,
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, -70 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, -70 )
+0/shape_offset = Vector2( -32, -128 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, -32, -128 )
 0/shape = SubResource( 1 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
@@ -46,36 +46,36 @@ points = PoolVector2Array( 101.847, 167.153, 81.0139, 167.153, 81.0139, 124.907,
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 }, {
 "autotile_coord": Vector2( 1, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 }, {
 "autotile_coord": Vector2( 2, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 }, {
 "autotile_coord": Vector2( 2, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 }, {
 "autotile_coord": Vector2( 1, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 5 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 }, {
 "autotile_coord": Vector2( 0, 1 ),
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 6 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, -70 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -32, -128 )
 } ]
 0/z_index = 0

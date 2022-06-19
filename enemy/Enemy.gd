@@ -61,10 +61,7 @@ func move_towards_target( delta, target_pos ):
 	else:
 		velocity.y = 0
 		
-	if velocity.x == 1:
-		scale.x = scale.y * -1
-	elif velocity.x == -1:
-		scale.x = scale.y
+	$AttackSurface.set_rotation(velocity.angle()+PI)
 	
 	velocity = velocity.normalized() * speed
 	self.set_current_dir(direction2str(velocity))
@@ -76,7 +73,8 @@ func direction2str(direction):
 	var angle = direction.angle()
 	if angle < 0:
 		angle += 2 * PI
-	var index = round(angle / PI * 4)
+	var index = floor(4 * angle / PI)
+#	print(direction,'  ',angle ,'  ',4 * angle / PI,'  ',index)
 	return self.get_dir(index)
 
 func receive_hit(damage_received):
